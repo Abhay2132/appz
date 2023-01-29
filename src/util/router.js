@@ -16,4 +16,6 @@ router.get("/env", (req,res) => {
 	res.json(process.env)
 })
 
+router.use("/pipe*", require("./pipe"));
+
 module.exports = router;
