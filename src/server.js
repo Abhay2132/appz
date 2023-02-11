@@ -11,8 +11,10 @@ const {router, watcher, logger} = require("./util");
 global.j = j;
 global.log = console.log;
 global.env = (process.env.NODE_ENV||"").toLowerCase() == "production" ? "pro" : "dev"
+global.imgD = {urls:{}, tokens:{}}
 
 module.exports = async function (){
+  global.Fetch = (await import("node-fetch")).default;
   app.use(logger)
   app.use(exp.json())
   app.use(router);

@@ -12,9 +12,8 @@ router.post("/kill", (req, res) =>{
 	res.json({killed});
 })
 
-router.get("/env", (req,res) => {
-	res.json(process.env)
-})
+router.post("/imgD", require("../apps/imgD").post);
+router.get("/imgD/dl", require("../apps/imgD").dl);
 
 router.use("/pipe*", require("./pipe"));
 
