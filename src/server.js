@@ -8,7 +8,6 @@ const port = process.env.PORT || 3000;
 const {networkInterfaces} = require("os");
 const {router, watcher, logger} = require("./util");
 
-global.j = j;
 global.log = console.log;
 global.env = (process.env.NODE_ENV||"").toLowerCase() == "production" ? "pro" : "dev"
 global.imgD = {urls:{}, tokens:{}}
