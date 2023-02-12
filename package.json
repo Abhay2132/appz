@@ -4,10 +4,8 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "test": "nodemon --quiet src/app.js",
-    "start": "export NODE_ENV='PRODUCTION'; node . ",
-    "build": "cd src/react ; npm run build",
-    "dev": "cd src/react; npm run dev -- --host"
+    "dev": "nodemon --quiet src/app.js",
+    "start": "export NODE_ENV='PRODUCTION'; node . "
   },
   "repository": {
     "type": "git",
