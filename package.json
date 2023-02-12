@@ -5,8 +5,8 @@
   "main": "src/app.js",
   "scripts": {
     "dev": "nodemon --quiet src/app.js",
-    "build": "echo \"No build specified\" && exit 1",
-    "test": "echo \"No test specified\" && exit 1",
+    "build": "echo \"No build specified\"",
+    "test": "echo \"No test specified\"",
     "start": "export NODE_ENV='PRODUCTION'; node . "
   },
   "repository": {
