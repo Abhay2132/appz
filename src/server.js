@@ -2,6 +2,7 @@ const exp = require("express");
 const app = exp();
 const server = require("http").createServer(app);
 const {exec, execSync} = require("child_process");
+const cors = require("cors");
 
 const {resolve:r, join:j} = require("path")
 const port = process.env.PORT || 3000;
@@ -14,6 +15,7 @@ global.imgD = {urls:{}, tokens:{}}
 
 module.exports = async function (){
   global.Fetch = (await import("node-fetch")).default;
+  app.use(cors())
   app.use(logger)
   app.use(exp.json())
   app.use(router);

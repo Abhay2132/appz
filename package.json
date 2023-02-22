@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Abhay2132/apps#readme",
   "dependencies": {
     "colors": "^1.4.0",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "mime": "^3.0.0",
     "node-fetch": "^3.3.0",
