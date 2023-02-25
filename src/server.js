@@ -11,6 +11,7 @@ const {router, watcher, logger} = require("./util");
 
 global.log = console.log;
 global.env = (process.env.NODE_ENV||"").toLowerCase() == "production" ? "pro" : "dev"
+global.dlog = env == "dev" ? log : (()=>{})
 global.imgD = {urls:{}, tokens:{}}
 
 module.exports = async function (){
