@@ -5,7 +5,7 @@ module.exports = async function(req, res) {
 	let urls = global.imgD.tokens[token].map(url => global.imgD.urls[url]);
 	const zip = new Packer();
 	res.header("Content-Type", "application/zip");
-	res.header("Content-Disposition", "attachment; filename=imgD" + token + ".zip")
+	res.header("Content-Disposition", "attachment; filename=imgD_" + token + ".zip")
 	zip.pipe(res);
 	for (let url of urls) {
 		let { imgs, title } = url;
