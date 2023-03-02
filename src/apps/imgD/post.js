@@ -48,6 +48,7 @@ module.exports = async function(req, res) {
 function imgFilter(img, i, url) {
 	let src = img.getAttribute("src") || img.getAttribute("data-src");
 	if(!src) return false;
+	src = src.replace(/[\n\t]/g, "")
 	url = url.split("?")[0];
 	if (!src.startsWith("http")) src = (url.at(-1) == "/" ? url.slice(0, -1) : url) + src;
 	let name = (i + 1 + ". ") + (img.getAttribute("alt") || "image")
