@@ -2,10 +2,7 @@ const ytdl = require("ytdl-core")
 const { spawn } = require("child_process")
 const ffmpeg = (process.env.ffmpeg || require('@ffmpeg-installer/ffmpeg').path)
 const { bs, getInfo } = require("./hlpr")
-const beautify = (str) =>
-	require("prettier").format(
-		typeof str == "object" ? JSON.stringify(str) : str, { useTabs: true, parser: "json" }
-	)
+
 const fs = require("fs")
 const rm = (file) => (fs.existsSync(file) && fs.rmSync(file, { recursive: true }))
 
@@ -73,7 +70,7 @@ async function dl(req, res) {
 		console.log({ videoF_error: e });
 	}
 
-	if (err) return res.end(beautify({ url, q: q + '', error: err.message, fs: formats.map(f => ({ height: '' + f.height })) }));
+	if (err) return res.json({ url, q: q + '', error: err.message, fs: formats.map(f => ({ height: '' + f.height })) });
 
 	res.header("Content-Type", "video/x-matroska");
 	res.header(
