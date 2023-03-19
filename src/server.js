@@ -1,3 +1,8 @@
+global.log = console.log;
+global.env = (process.env.NODE_ENV||"").toLowerCase() == "production" ? "pro" : "dev"
+global.dlog = env == "dev" ? log : (()=>{})
+global.imgD = {urls:{}, tokens:{}}
+
 const exp = require("express");
 const app = exp();
 const server = require("http").createServer(app);
@@ -8,11 +13,6 @@ const {resolve:r, join:j} = require("path")
 const port = process.env.PORT || 3000;
 const {networkInterfaces} = require("os");
 const {router, watcher, logger} = require("./util");
-
-global.log = console.log;
-global.env = (process.env.NODE_ENV||"").toLowerCase() == "production" ? "pro" : "dev"
-global.dlog = env == "dev" ? log : (()=>{})
-global.imgD = {urls:{}, tokens:{}}
 
 module.exports = async function (){
   global.Fetch = (await import("node-fetch")).default;

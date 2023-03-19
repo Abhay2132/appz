@@ -17,9 +17,8 @@ router.post("/imgD", require("../apps/imgD").post);
 router.get("/imgD/dl", require("../apps/imgD").dl);
 router.get("/imgD/store", (req, res) => res.json(global.imgD))
 
-// router.get("/imgD", (req,res) => {
-// 	res.sendFile(r("src","public", "index.html"));
-// })
+router.post("/ytdl", require("../apps/ytdl").getD);
+router.get("/ytdl/dl", require("../apps/ytdl").dl)
 
 router.use("/pipe*", require("./pipe"));
 router.use((req, res, next) => {
@@ -29,4 +28,4 @@ router.use((req, res, next) => {
 })
 
 module.exports = router;
-const ar = ['/imgD']
+const ar = ['/imgD', '/ytdl']
