@@ -21,11 +21,8 @@ router.post("/ytdl", require("../apps/ytdl").getD);
 router.get("/ytdl/dl", require("../apps/ytdl").dl)
 
 router.use("/pipe*", require("./pipe"));
-router.use((req, res, next) => {
-	if(!ar.includes(req.url)) return next();
-	if(req.method !== "GET") return next();
-	res.sendFile(r("src","public", "index.html"));
-})
+
+['/imgD', '/ytdl', '/notebook']
+.forEach(url => router.get(url,(req, res)=> res.sendFile(r("src","public", "index.html"))));
 
 module.exports = router;
-const ar = ['/imgD', '/ytdl']
