@@ -16,6 +16,8 @@ const {router, watcher, logger} = require("./util");
 
 module.exports = async function (){
   global.Fetch = (await import("node-fetch")).default;
+  
+  if(process.env?.pingURL) setInterval(()=> Fetch (process.env.pingURL), (5*60*1000));
   app.use(cors())
   app.use(logger)
   app.use(exp.json())
