@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const {resolve:r} = require("path");
 
+router.get("/ping", (req,res)=>res.end());
 router.post("/kill", (req, res) =>{
 	const code = req?.body?.code;
 	if(!code) return res.json({error : "code not given in body !"})
