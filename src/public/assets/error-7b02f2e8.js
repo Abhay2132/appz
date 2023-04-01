@@ -1,0 +1,1 @@
+import{b as o,j as r}from"./index-75bf890f.js";import{u as s}from"./App-d0a27035.js";function a(){const e=s();return console.error(e),o("div",{id:"error-page",children:[r("h1",{children:"Oops!"}),r("p",{children:"Sorry, an unexpected error has occurred."}),r("p",{children:r("i",{children:e.statusText||e.message})})]})}export{a as default};

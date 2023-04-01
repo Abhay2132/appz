@@ -1,0 +1,1 @@
+import{b as t,j as s}from"./index-75bf890f.js";function i(){return t("div",{id:"settings-box",children:[s("div",{className:"settings-menu",children:"Settings Menu"}),s("div",{className:"settings-body",children:" Settings Body"})]})}export{i as default};
